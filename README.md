@@ -22,7 +22,9 @@ The **Employee Tracker** is a command-line application that helps business owner
 
 - Manager selection dynamically lists current employees as options.
 - Input validation ensures data consistency.
+## Walkthrough Video
 
+You can watch the walkthrough video [here](https://app.screencastify.com/v2/manage/videos/4IOhch17wnMNpkucJAhp). 
 ---
 
 ## Installation
