@@ -94,31 +94,37 @@ export const updateEmployeeRole = async (employeeId: number, newRoleId: number):
     }
 };
 
+// Get departments for prompt
+export const getDepartmentsForPrompt = async (): Promise<{ name: string; id: number }[]> => {
+    try {
+        const result = await pool.query('SELECT id, name FROM department ORDER BY id');
+        return result.rows; // Returns an array of objects like [{ id: 1, name: 'Engineering' }]
+    } catch (err) {
+        console.error('Error retrieving departments:', err);
+        return [];
+    }
+};
 
+// Get roles for prompt
+export const getRolesForPrompt = async (): Promise<{ title: string; id: number }[]> => {
+    try {
+        const result = await pool.query('SELECT id, title FROM role ORDER BY id');
+        return result.rows;
+    } catch (err) {
+        console.error('Error retrieving roles:', err);
+        return [];
+    }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Get managers for prompt
+export const getManagersForPrompt = async (): Promise<{ id: number; firstName: string; lastName: string }[]> => {
+    try {
+        const result = await pool.query(
+            `SELECT id, first_name AS "firstName", last_name AS "lastName" FROM employee ORDER BY id`
+        );
+        return result.rows; // Returns an array of objects like [{ id: 1, firstName: 'John', lastName: 'Doe' }]
+    } catch (err) {
+        console.error('Error retrieving managers:', err);
+        return [];
+    }
+};
