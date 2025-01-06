@@ -1,30 +1,45 @@
-DROP DATABASE IF EXISTS EmployeeTracker_db;
+DROP DATABASE IF EXISTS employeetracker_db;
+CREATE DATABASE employeetracker_db;
 
-CREATE DATABASE EmployeeTracker_db;
+\c employeetracker_db;
 
-\c EmployeeTracker_db;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS department;
 
-CREATE TABLE departmentT (
-  dept_id SERIAL PRIMARY KEY,
-  dept_name VARCHAR(30) NOT NULL
-  FOREIGN KEY (role_id) REFERENCES rolesT (role_id)
-  FOREIGN KEY
+CREATE TABLE department (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL UNIQUE
 );
 
-CREATE TABLE rolesT (
-    role_id SERIAL PRIMARY KEY,
-    title VARCHAR(30), NOT NULL,
+CREATE TABLE role (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(30) NOT NULL UNIQUE,
     salary DECIMAL(10, 2) NOT NULL,
-    dept_id INTEGER,
-    FOREIGN KEY (dept_id) REFERENCES departmentT (dept_id)
-    );
+    department_id INTEGER NOT NULL,
+    FOREIGN KEY (department_id) REFERENCES department (id) ON DELETE CASCADE
+);
 
-    CREATE TABLE employeesT (
-        employee_id SERIAL PRIMARY KEY,
-        first_name VARCHAR(30) NOT NULL,
-        last_name VARCHAR(30) NOT NULL,
-        role_id INTEGER,
-        manager_id INTEGER,
-        FOREIGN KEY (role_id) REFERENCES rolesT (role_id),
-        FOREIGN KEY (manager_id) REFERENCES employeesT (employee_id) 
-        );
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INTEGER NOT NULL,
+    manager_id INTEGER,
+    FOREIGN KEY (role_id) REFERENCES role (id) ON DELETE CASCADE,
+    FOREIGN KEY (manager_id) REFERENCES employee (id) ON DELETE SET NULL
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

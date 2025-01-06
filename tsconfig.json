@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2016",
+    "rootDir": "./src", // Ensure this points to your source code folder
+    "outDir": "./dist", // Output folder for compiled code
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*"] // Optional, enables cleaner imports
+    }
+  },
+  "include": ["src/**/*"], // Ensure all source files are included
+  "exclude": ["node_modules", "dist"] // Exclude unwanted directories
+}
