@@ -149,8 +149,8 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 ## Contact
 
 - **Author**: Ian Kessack
-- **Email**: [your-email@example.com](iankessack1989@gmail.com)
-- **GitHub**: [your-github-profile]([IK8991](https://github.com/IK8933))
+- **Email**: [iankessack1989@gmail.com](mailto:iankessack1989@gmail.com)
+- **GitHub**: [IK8933](https://github.com/IK8933)
 
 ---
 
