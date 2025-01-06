@@ -149,11 +149,10 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 ## Contact
 
 - **Author**: Ian Kessack
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **GitHub**: [your-github-profile](https://github.com/your-profile)
+- **Email**: [your-email@example.com](mailto:iankessack1989@gmail.com)
+- **GitHub**: [your-github-profile](https://github.com/ik8991)
 
 ---
 
-## Walkthrough Video
 
-A walkthrough video demonstrating the functionality of this application can be found [here](#).
+
